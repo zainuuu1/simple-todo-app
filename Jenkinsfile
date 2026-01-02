@@ -1,10 +1,6 @@
 pipeline {
   agent any
 
-  tools {
-    nodejs 'node18'
-  }
-
   stages {
 
     stage('Get Code') {
@@ -16,9 +12,10 @@ pipeline {
     stage('Build Backend') {
       steps {
         dir('todo-app') {
+          sh 'node -v'
+          sh 'npm -v'
           sh 'npm install'
           sh 'npm run build'
-          stash name: 'backend-dist', includes: 'dist/**'
         }
       }
     }
