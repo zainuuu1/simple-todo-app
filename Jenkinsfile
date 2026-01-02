@@ -9,7 +9,7 @@ pipeline {
 
     stage('Get Code') {
       steps {
-        git 'https://github.com/your-username/your-repo.git'
+        git 'https://github.com/zainuuu1/simple-todo-app'
       }
     }
 
